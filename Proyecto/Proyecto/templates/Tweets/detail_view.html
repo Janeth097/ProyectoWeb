@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{%block content%}
+  <h4>{{result.user.username}}: {{result.content}}</h4>
+  <span class='pull-right has-text-grey-light'> <i class='fa fa-comments'></i> 1 </span>
+  <div class='media'>
+    <div class='content'>
+      <p>
+        <a href="/tweet/detail/{{result.id}}/update">Editar</a> | <a style="color: red;" href="/tweet/detail/{{result.id}}/delete">Eliminar</a> | {{result.created}} ago
+      </p>
+    </div>
+  </div>
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends 'base1.html' %}
+{% block search %}
+  {% include 'Tweets/search_form.html' %}
+{% endblock %}
+
+{% block content %}
+  {% if not request.GET.q %}
+  <div class="">
+    {% include 'Tweets/form.html' with form=create_form action_url=create_url btn_title='Tweetea!' form_id='tweet-form' %}
+  </div>
+  {% endif %}
+  <article class="post" id="ajax_tweets">
+  </article>
+  <a href="#" class="button is-primary is-block is-alt is-large" id="loadmore">Cargar mas Tweets</a>
+{% endblock %}
